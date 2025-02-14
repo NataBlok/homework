@@ -1,0 +1,21 @@
+p {
+    color: blue; /* Специфічність: 1 */
+}
+.text {
+    font-size: 16px;/* Специфічність: 10 */
+}
+p.text {
+    font-weight: bold;/* Специфічність: 11 */
+}
+#main {
+    background-color: yellow;/* Специфічність: 100 */
+}
+#main p {
+    color: red;/* Специфічність: 101 */
+}
+#main .text {
+    text-decoration: underline;/* Специфічність: 110 */
+}
+#main .text p {
+    letter-spacing: 2px;/* Специфічність: 111 */
+}

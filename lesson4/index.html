@@ -1,0 +1,102 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Реєстрація</title>  
+    <link rel="stylesheet" href="./pages/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    <style>  
+        .input-group {  
+            position: relative;  
+            margin-bottom: 20px;  
+        }  
+
+        .eye-icon {  
+            position: absolute;  
+            right: 10px;  
+            top: 50%;  
+            transform: translateY(-50%);  
+            cursor: pointer;  
+            color: #888;  
+        }  
+
+        /* Updated styling for register button */  
+        .register-button {  
+            background-color: #28a745; /* Green color */  
+            color: white;  
+            border: none;  
+            padding: 10px 20px;  
+            cursor: pointer;  
+            border-radius: 5px;  
+            font-size: 16px; /* Added font size for better visibility */  
+            transition: none; /* Disable transition for hover effects */  
+        }  
+
+        .social-buttons button {  
+            margin-right: 10px;  
+        }  
+
+        .social-login {  
+            margin-top: 20px; /* Adds space above social login */  
+        }  
+    </style>  
+</head>  
+<body>  
+<div class="register-container">  
+    <div class="register-header">  
+        <div class="header-links">  
+            <a href="#">Login</a>  
+            <span>|</span>  
+            <a href="#" class="active">Register</a>  
+        </div>  
+    </div>  
+    <div class="register-form">  
+        <p>Enter your email and password to register.</p>  
+        <form>  
+            <div class="input-group">  
+                <input type="text" id="username" name="username" placeholder="Username" required>  
+            </div>  
+            <div class="input-group">  
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>  
+            </div>  
+            <div class="input-group">  
+                <input type="password" id="password" name="password" placeholder="Password" required>  
+                <i class="fa fa-eye eye-icon toggle-password" onclick="togglePassword()"></i>  
+            </div>  
+            <div class="input-group">  
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>  
+            </div>  
+            <button type="submit" class="register-button">Register</button>  
+        </form>  
+        <div class="social-login">  
+            <div class="social-login-separator">  
+                <p>Or register with</p>  
+            </div>  
+            <div class="social-buttons">  
+                <button class="google-btn">
+                    <i class="fa-brands fa-google"></i> Continue with Google
+                </button>
+                <button class="facebook-btn">
+                    <i class="fa-brands fa-facebook"></i> Continue with Facebook
+                </button>
+            </div>  
+        </div>  
+    </div>  
+</div>  
+<script>  
+    function togglePassword() {  
+        const passwordInput = document.getElementById("password");  
+        const icon = document.querySelector(".toggle-password");  
+
+        // Toggle the type attribute  
+        const type = passwordInput.type === "password" ? "text" : "password";  
+        passwordInput.type = type;  
+
+        // Toggle the eye icon  
+        icon.classList.toggle("fa-eye");  
+        icon.classList.toggle("fa-eye-slash");  
+    }  
+</script>  
+</body>  
+</html>
